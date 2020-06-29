@@ -4,7 +4,7 @@
   "description": "",
   "keywords": [],
   "main": "src/index.js",
-  "homepage": "/https://alaaalmasri12.github.io/resty-lab/",
+  "homepage": "https://alaaalmasri12.github.io/resty-lab/",
   "dependencies": {
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",

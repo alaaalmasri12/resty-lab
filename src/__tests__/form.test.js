@@ -1,9 +1,7 @@
-
 import React from 'react';
 import { shallow, mount} from 'enzyme';
 import renderer from 'react-test-renderer';
 import Form from '../components/form/form';
-
 describe('<Form/>', ()=> {
   it('store the users input into state', ()=> {
         let app =mount(<Form />);
