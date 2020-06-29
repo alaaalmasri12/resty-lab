@@ -29,7 +29,7 @@ class Form extends React.Component {
       let method = '';
 
       this.setState({request, url, method});
-      e.target.reset();
+      // e.target.reset();
 
     }
 
@@ -66,7 +66,7 @@ class Form extends React.Component {
         </form>
         <section className="results">
           <span className="method">{this.state.request.method}</span>
-          <span id='url' className="url">{this.state.request.url}</span>
+          <span  className="url">{this.state.request.url}</span>
         </section>
       </>
     );

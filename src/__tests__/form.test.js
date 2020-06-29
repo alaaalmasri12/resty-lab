@@ -15,17 +15,37 @@ describe('<Form/>', ()=> {
         let app = mount(<Form />);
         let input = app.find('input');
         input.simulate('change',{ target: { value: 'alaa' } });
-        console.log('state',app.state());
         let button = app.find('button');
+        let method=app.find('#post');
+        method.simulate('click');
         button.simulate('submit');
-        console.log('status',app.state());
-        expect(app.find('#url').text()).toContain('alaa');
+        expect(app.find('.url').text()).toContain('alaa');
     });
-    it('    Does it properly clear the form/state after the form is submitted', ()=> {
+    it(' Does it properly clear the form/state after the form is submitted', ()=> {
         let app = mount(<Form />);
-        let form = app.find('form');
-        form.simulate('submit');
-        expect(app.state('url','method','request')).toEqual('');
+        let input = app.find('input');
+        input.simulate('change',{ target: { value: 'alaa' } });
+        let button = app.find('button');
+        let method=app.find('#post');
+        method.simulate('click');
+        button.simulate('submit');
+        expect(app.find('input').text()).toContain('');
     });
 
+    it('renders correctly', ()=> {
+        const tree = renderer.create(<Form />).toJSON();
+        expect(tree).toMatchSnapshot();
+    });
+    it('input', () =>{
+        let app = shallow(<Form />);
+        expect(app.find('input').exists()).toBeTruthy();
+    });
+    it('button', () =>{
+        let app = shallow(<Form />);
+        expect(app.find('button').exists()).toBeTruthy();
+    });
+    it('span', () =>{
+        let app = shallow(<Form />);
+        expect(app.find('span').exists()).toBeTruthy();
+    });
     });
