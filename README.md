@@ -7,6 +7,10 @@
 ### Links and Resources
 
 - [submission PR](https://github.com/alaaalmasri12/resty-lab/pull/1)
+- [github link](https://alaaalmasri12.github.io/resty-lab/)
+- [netlify](https://eloquent-wiles-c1136a.netlify.app/)
+- [submission PR](https://github.com/alaaalmasri12/resty-lab/pull/1)
+
 
 
 #### How to initialize/run your application (where applicable)
