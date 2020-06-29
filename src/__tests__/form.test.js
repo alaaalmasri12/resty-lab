@@ -19,7 +19,7 @@ describe('<Form/>', ()=> {
         let button = app.find('button');
         button.simulate('submit');
         console.log('status',app.state());
-        expect(app.find('.url').text()).toContain('alaa');
+        expect(app.find('#url').text()).toContain('alaa');
     });
     it('    Does it properly clear the form/state after the form is submitted', ()=> {
         let app = mount(<Form />);
