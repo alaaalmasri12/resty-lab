@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/alaaalmasri12/resty-lab/static/css/main.26024cff.chunk.css",
-    "main.js": "/alaaalmasri12/resty-lab/static/js/main.31fd7979.chunk.js",
-    "main.js.map": "/alaaalmasri12/resty-lab/static/js/main.31fd7979.chunk.js.map",
-    "runtime-main.js": "/alaaalmasri12/resty-lab/static/js/runtime-main.dd2613f7.js",
-    "runtime-main.js.map": "/alaaalmasri12/resty-lab/static/js/runtime-main.dd2613f7.js.map",
-    "static/js/2.e37d5b6a.chunk.js": "/alaaalmasri12/resty-lab/static/js/2.e37d5b6a.chunk.js",
-    "static/js/2.e37d5b6a.chunk.js.map": "/alaaalmasri12/resty-lab/static/js/2.e37d5b6a.chunk.js.map",
-    "index.html": "/alaaalmasri12/resty-lab/index.html",
-    "precache-manifest.639aff913673ffaa1226acc185c64e88.js": "/alaaalmasri12/resty-lab/precache-manifest.639aff913673ffaa1226acc185c64e88.js",
-    "service-worker.js": "/alaaalmasri12/resty-lab/service-worker.js",
-    "static/css/main.26024cff.chunk.css.map": "/alaaalmasri12/resty-lab/static/css/main.26024cff.chunk.css.map",
-    "static/js/2.e37d5b6a.chunk.js.LICENSE.txt": "/alaaalmasri12/resty-lab/static/js/2.e37d5b6a.chunk.js.LICENSE.txt"
+    "main.css": "/https://alaaalmasri12.github.io/resty-lab/static/css/main.26024cff.chunk.css",
+    "main.js": "/https://alaaalmasri12.github.io/resty-lab/static/js/main.31fd7979.chunk.js",
+    "main.js.map": "/https://alaaalmasri12.github.io/resty-lab/static/js/main.31fd7979.chunk.js.map",
+    "runtime-main.js": "/https://alaaalmasri12.github.io/resty-lab/static/js/runtime-main.63e29efb.js",
+    "runtime-main.js.map": "/https://alaaalmasri12.github.io/resty-lab/static/js/runtime-main.63e29efb.js.map",
+    "static/js/2.e37d5b6a.chunk.js": "/https://alaaalmasri12.github.io/resty-lab/static/js/2.e37d5b6a.chunk.js",
+    "static/js/2.e37d5b6a.chunk.js.map": "/https://alaaalmasri12.github.io/resty-lab/static/js/2.e37d5b6a.chunk.js.map",
+    "index.html": "/https://alaaalmasri12.github.io/resty-lab/index.html",
+    "precache-manifest.203718feb738d9537ba4a9e6d5de6a7d.js": "/https://alaaalmasri12.github.io/resty-lab/precache-manifest.203718feb738d9537ba4a9e6d5de6a7d.js",
+    "service-worker.js": "/https://alaaalmasri12.github.io/resty-lab/service-worker.js",
+    "static/css/main.26024cff.chunk.css.map": "/https://alaaalmasri12.github.io/resty-lab/static/css/main.26024cff.chunk.css.map",
+    "static/js/2.e37d5b6a.chunk.js.LICENSE.txt": "/https://alaaalmasri12.github.io/resty-lab/static/js/2.e37d5b6a.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.dd2613f7.js",
+    "static/js/runtime-main.63e29efb.js",
     "static/js/2.e37d5b6a.chunk.js",
     "static/css/main.26024cff.chunk.css",
     "static/js/main.31fd7979.chunk.js"
