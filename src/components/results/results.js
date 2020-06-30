@@ -1,21 +1,18 @@
 import React from 'react';
 import '../form/form.scss';
+import ReactJson from 'react-json-view'
 const Result = (props) => {
     return (
         <div>
-                {
-                    <section className="results">
-                <div>Count: {props.count}</div>
-                <span>Header:<pre>{JSON.stringify(props.headers, null, 2) }</pre></span>
-                    <span className="method"><pre>{JSON.stringify(props.results, null, 2) }</pre></span>
-                  </section>
-                
-                }
-                </div>
-    )                  
-            
-                            
-                
-}   
-    
+            {
+                <section className="results">
+                    <div>Count: {props.count}</div>
+                    <span>Header:<ReactJson src={props.headers} /></span>
+                    <span className="method"><ReactJson src={props.results} /></span>
+                </section>
+
+            }
+        </div>
+    )
+}
 export default Result;

@@ -21,8 +21,11 @@ class Form extends React.Component {
       let raw = await fetch(this.state.url);
       console.log('raw',raw);
       let data = await raw.json();
-      let headers=raw.headers;
-      console.log('headers',headers);
+      // let headers=raw.headers;
+      // raw.headers.forEach((val, key) => {
+      //   console.log(key=> key, value=>value)
+      // });
+      // console.log('headers',headers);
       // if(data.count)
       if (data.count)
       {
@@ -36,7 +39,7 @@ class Form extends React.Component {
 
       console.log("data.results : ", data);
 
-      this.props.handler(data,count,headers);
+      this.props.handler(data,count);
       // Make an object that would be suitable for superagent
       let request = {
         url: this.state.url,

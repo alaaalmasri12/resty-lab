@@ -9,10 +9,10 @@ class App extends React.Component {
         this.state = {
             count:0,
             results: [],
-            headers:[]
         };
     }
-    handleForm = (results,count,headers) => {
+    handleForm = (results,count) => {
+        let headers={"content-type":"application-json"};
         this.setState({results,count,headers});
     }
 
