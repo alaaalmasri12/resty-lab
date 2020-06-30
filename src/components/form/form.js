@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './form.scss';
-
+var count;
 class Form extends React.Component {
 
   constructor(props) {
@@ -13,24 +13,39 @@ class Form extends React.Component {
     };
   }
 
-  handleSubmit = e => {
+  handleSubmit = async e => {
     e.preventDefault();
+    if (this.state.url && this.state.method) {
+      console.log('entered the function');
+      console.log('state url',this.state.url);
+      let raw = await fetch(this.state.url);
+      console.log('raw',raw);
+      let data = await raw.json();
+      let headers=raw.headers;
+      console.log('headers',headers);
+      // if(data.count)
+      if (data.count)
+      {
+         count=data.count;
+      }
+      else
+      {
+       count=Object.keys(data).length;
 
-    if ( this.state.url && this.state.method ) {
+      }
 
+      console.log("data.results : ", data);
+
+      this.props.handler(data,count,headers);
       // Make an object that would be suitable for superagent
       let request = {
         url: this.state.url,
         method: this.state.method,
       };
-
-      // Clear old settings
       let url = '';
       let method = '';
 
-      this.setState({request, url, method});
-      // e.target.reset();
-
+      this.setState({ request, url, method });
     }
 
     else {
@@ -40,11 +55,12 @@ class Form extends React.Component {
 
   handleChangeURL = e => {
     const url = e.target.value;
-    this.setState({url});
+    this.setState({ url });
   };
 
   handleChangeMethod = e => {
-    const method = e.target.id;
+
+    let method = 'get'||e.target.id;
     this.setState({ method });
   };
 
@@ -64,10 +80,7 @@ class Form extends React.Component {
             <span className={this.state.method === 'delete' ? 'active' : ''} id="delete" onClick={this.handleChangeMethod}>DELETE</span>
           </label>
         </form>
-        <section className="results">
-          <span className="method">{this.state.request.method}</span>
-          <span  className="url">{this.state.request.url}</span>
-        </section>
+        
       </>
     );
   }

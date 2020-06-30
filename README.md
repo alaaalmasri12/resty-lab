@@ -1,15 +1,14 @@
 # resty-lab
 
-## Project: lab-27
+## Project: lab-28
 
 ### Author: Alaa almasri
 
 ### Links and Resources
 
-- [submission PR](https://github.com/alaaalmasri12/resty-lab/pull/1)
+- [submission PR](https://github.com/alaaalmasri12/resty-lab/pull/2)
 - [github link](https://alaaalmasri12.github.io/resty-lab/)
 - [netlify](https://eloquent-wiles-c1136a.netlify.app/)
-- [submission PR](https://github.com/alaaalmasri12/resty-lab/pull/1)
 
 
 
@@ -18,6 +17,6 @@
 - e.g. `npm run start`
 
 #### UML
-![lab26](assets/resty.png)
+![lab28](assets/resty.png)
 
 
