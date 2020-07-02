@@ -14,35 +14,81 @@ class Form extends React.Component {
     };
     this.items = [];
   }
-
-      handleSubmit = async e => {
+  handleSubmit = async e => {
     e.preventDefault();
+    this.props.toggleLoading();
     if (this.state.url && this.state.method) {
       let object = {
         url: this.state.url,
         method: this.state.method,
         body: this.state.body
       }
-      this.items.push(object);
-      await fetch(`${this.state.url}`, {
-        method: "POST",
-        body: JSON.stringify({}),
-        url:this.state.url,
-        headers: {
-          "Content-type": "application/json; charset=UTF-8"
+      console.log('test 1', this.items);
+
+      if (this.state.method === 'post') {
+        let history=JSON.parse(localStorage.getItem("item"));
+        if(history)
+        {
+          this.items=history;
         }
-      })
-        .then(response => response.json())
-        .then(json => console.log(json));
-        
-
-
-
-      localStorage.setItem("url", `${this.state.url}`);
-      localStorage.setItem("method", `${this.state.method}`);
-      localStorage.setItem("body", `${this.state.body}`);
-      items.push(this.state.method + " " + this.state.url + " " + this.state.body);
-      localStorage.setItem("item", `${items}`);
+        this.items.push(object);
+        localStorage.setItem("item", JSON.stringify(this.items));
+    
+        console.log(this.items); 
+        const requestOptions = {
+          method: this.state.method.toUpperCase(),
+          cache: 'no-cache',
+          credentials: 'same-origin',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          redirect: 'follow',
+          referrerPolicy: 'no-referrer',
+          body: JSON.stringify(this.state.body.data)
+        };
+        await fetch(this.state.url, requestOptions)
+          .then(data => this.setState(this.state.body.data))
+      }
+      else if (this.state.method === "put") {
+        let history=JSON.parse(localStorage.getItem("item"));
+        if(history)
+        {
+          this.items=history;
+        }
+        this.items.push(object);
+        localStorage.setItem("item", JSON.stringify(this.items));
+        const requestOptions = {
+          method: this.state.method.toUpperCase(),
+          cache: 'no-cache',
+          credentials: 'same-origin',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          redirect: 'follow',
+          referrerPolicy: 'no-referrer',
+          body: JSON.stringify(this.state.body.data)
+        };
+        await fetch(this.state.url, requestOptions)
+          .then(data => this.setState(this.state.body.data))
+      }
+      else if (this.state.method === 'delete') {
+        let history=JSON.parse(localStorage.getItem("item"));
+        if(history)
+        {
+          this.items=history;
+        }
+        this.items.push(object);
+        localStorage.setItem("item", JSON.stringify(this.items));
+        const requestOptions = {
+          method: this.state.method.toUpperCase(),
+          cache: 'no-cache',
+          credentials: 'same-origin',
+          redirect: 'follow',
+          referrerPolicy: 'no-referrer',
+        };
+        await fetch(this.state.url, requestOptions)
+          .then(data => this.setState(this.state.body.data))
+      }
       let raw = await fetch(this.state.url);
       console.log('raw', raw);
       let data = await raw.json();
@@ -53,12 +99,8 @@ class Form extends React.Component {
       }
       else {
         count = Object.keys(data).length;
-
       }
-
       console.log("data.results : ", data);
-
-      console.log('alaa', items);
       this.props.handler(data, count, Headers, items);
       // Make an object that would be suitable for superagent
       let request = {
@@ -67,11 +109,8 @@ class Form extends React.Component {
       };
       let url = '';
       let method = '';
-
       this.setState({ request, url, method, items });
-
     }
-
     else {
       alert('missing information');
     }
@@ -81,16 +120,14 @@ class Form extends React.Component {
     const url = e.target.value;
     this.setState({ url });
   };
-
   handleChangeMethod = e => {
-
     let method = e.target.id;
     this.setState({ method });
   };
-  handleBody = e => {
-    const body = e.target.value;
-    this.setState({ body });
-  };
+  bodyHandel = e => {
+    const data = JSON.parse(e.target.value);
+    this.setState({ body: { data } });
+  }
   render() {
     return (
       <>
@@ -106,7 +143,7 @@ class Form extends React.Component {
             <span className={this.state.method === 'put' ? 'active' : ''} id="put" onClick={this.handleChangeMethod}>PUT</span>
             <span className={this.state.method === 'delete' ? 'active' : ''} id="delete" onClick={this.handleChangeMethod}>DELETE</span>
           </label>
-          <textarea name='url' type='text' onChange={this.handleBody} />
+          <textarea name='url' type='text' onChange={this.bodyHandel} />
         </form>
       </>
     );

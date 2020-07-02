@@ -1,20 +1,21 @@
 import React from 'react';
-import './results.scss';
+import '../results/results.scss';
 import ReactJson from 'react-json-view'
 const Result = (props) => {
     return (
-        <section className='result'>
-        <div>
-               {
+
+<div>
+<div className={`loading-${props.loading}`} /> 
+        {
         <ReactJson src={props.headers} />
       }
 
       {
         <ReactJson src={props.results} />
       }
-
         </div>
-        </section>
+        
     )
+
 }
 export default Result;
