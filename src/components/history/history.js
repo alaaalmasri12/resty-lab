@@ -7,7 +7,7 @@ class History extends React.Component {
        let storage=JSON.parse(localStorage.getItem('item'));
        return storage.map((item,i)=>{
            console.log(item.url);
-        return <li key={i}>{item.method }: {item.url }  </li>
+        return <li key={i}>{item.method }:  <a href={item.url }>{item.url }</a></li>
         })
     
 }

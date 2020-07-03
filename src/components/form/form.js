@@ -32,8 +32,7 @@ class Form extends React.Component {
           this.items=history;
         }
         this.items.push(object);
-        localStorage.setItem("item", JSON.stringify(this.items));
-    
+        localStorage.setItem("item", JSON.stringify(this.items)); 
         console.log(this.items); 
         const requestOptions = {
           method: this.state.method.toUpperCase(),
